@@ -1,0 +1,135 @@
+.process {
+  padding: 120px 40px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.process::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.3;
+}
+
+.process__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.process__header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.process__steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-accent), var(--border-accent), transparent);
+}
+
+.process-step {
+  padding: 0 32px;
+  position: relative;
+  text-align: center;
+}
+
+.process-step__number {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--border-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  background: var(--bg-secondary);
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover .process-step__number {
+  background: var(--accent-dim);
+  box-shadow: 0 0 24px rgba(201, 168, 76, 0.15);
+}
+
+.process-step__title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.process-step__desc {
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.process__cta {
+  text-align: center;
+}
+
+.process__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #090909;
+  background: var(--accent);
+  padding: 16px 40px;
+  transition: background 0.25s ease;
+}
+
+.process__cta-btn:hover {
+  background: var(--accent-light);
+}
+
+@media (max-width: 900px) {
+  .process__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .process__steps::before {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .process {
+    padding: 80px 24px;
+  }
+
+  .process__steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
